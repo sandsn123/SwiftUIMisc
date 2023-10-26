@@ -43,6 +43,13 @@ public struct OffsetObservingScrollView<Content: View>: View {
     @Binding public var offset: CGPoint
     @ViewBuilder public var content: () -> Content
     
+    public init(axes: Axis.Set = .horizontal, showsIndicators: Bool = true, offset: Binding<CGPoint>, content: @escaping () -> Content) {
+        self.axes = axes
+        self.showsIndicators = showsIndicators
+        self._offset = offset
+        self.content = content
+    }
+    
     // The name of our coordinate space doesn't have to be
     // stable between view updates (it just needs to be
     // consistent within this view), so we'll simply use a
