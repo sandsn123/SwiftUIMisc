@@ -37,11 +37,11 @@ private extension PositionObservingView {
     }
 }
 
-struct OffsetObservingScrollView<Content: View>: View {
+public struct OffsetObservingScrollView<Content: View>: View {
     var axes: Axis.Set = [.vertical]
     var showsIndicators = true
-    @Binding var offset: CGPoint
-    @ViewBuilder var content: () -> Content
+    @Binding public var offset: CGPoint
+    @ViewBuilder public var content: () -> Content
     
     // The name of our coordinate space doesn't have to be
     // stable between view updates (it just needs to be
@@ -49,7 +49,7 @@ struct OffsetObservingScrollView<Content: View>: View {
     // plain UUID for it:
     private let coordinateSpaceName = UUID()
     
-    var body: some View {
+    public var body: some View {
         ScrollView(axes, showsIndicators: showsIndicators) {
             PositionObservingView(
                 coordinateSpace: .named(coordinateSpaceName),
