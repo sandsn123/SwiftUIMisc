@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "lsswiftmacros",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sandsn123/LSSwiftMacros.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fb7d5543dcdddc0f6c90b0a362836511c589c7f4"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
+        "version" : "509.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}

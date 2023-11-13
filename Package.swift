@@ -12,11 +12,14 @@ let package = Package(
             name: "SwiftUIMisc",
             targets: ["SwiftUIMisc"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/sandsn123/LSSwiftMacros.git", branch: "main")
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SwiftUIMisc"),
+            name: "SwiftUIMisc",
+            dependencies: [.product(name: "LSSwiftMacros", package: "LSSwiftMacros")]
+        ),
         .testTarget(
             name: "SwiftUIMiscTests",
             dependencies: ["SwiftUIMisc"]),
