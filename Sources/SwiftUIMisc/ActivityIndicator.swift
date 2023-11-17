@@ -53,8 +53,14 @@ public struct ActivityIndicator: View {
             }
         }
     }
-    public var style: Style = .mini
-    public var color: UIColor = .white
+    public let style: Style
+    public let color: UIColor
+    
+    public init(style: Style = .mini, color: UIColor = .white) {
+        self.style = style
+        self.color = color
+    }
+    
     public var body: some View {
         if #available(iOS 15.0, *) {
             ProgressView()
